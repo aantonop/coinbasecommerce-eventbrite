@@ -55,7 +55,7 @@ def webhook():
 		except (WebhookInvalidPayload, SignatureVerificationError) as e:
 			return str(e), 400
 
-		logger.debug("Received event: id={id}, type={type}".format(id=event.id, type=event.type))
+		logger.info("Received event: id={id}, type={type}".format(id=event.id, type=event.type))
 		# check event.type. We should only receive charge:confirmed. If webhook is misconfigured we want to ignore pending or failed charges.
 		if event.type != "charge:confirmed":
 			logger.debug('Event is not a confirmed charge. Waiting...')
@@ -109,7 +109,7 @@ def webhook():
 			logger.error("Error creating EventBrite discount code: "+str(result))
 			return "Error creating EventBrite discount code", 400
 		else:
-			logger.debug("EventBrite success: "+str(result))
+			logger.info("EventBrite success: "+str(result))
 			return 'Success', 200
 
 if __name__ == '__main__':
