@@ -1,0 +1,2 @@
+# Run cb-eb integration server with gunicorn 
+#  nohup gunicorn --chdir /home/ubuntu/cb-eb-billing/ --certfile fullchain.pem --keyfile privkey.pem -b 0.0.0.0:443 --log-level debug --reload -w 3 -k gthread cb-eb-server:app &

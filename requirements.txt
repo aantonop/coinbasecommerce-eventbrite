@@ -1,0 +1,17 @@
+certifi==2018.8.24
+chardet==3.0.4
+Click==7.0
+coinbase-commerce==1.0.1
+eventbrite==3.3.3
+Flask==1.0.2
+gunicorn==19.9.0
+idna==2.7
+itsdangerous==0.24
+Jinja2==2.10
+MarkupSafe==1.0
+munch==2.3.2
+pkg-resources==0.0.0
+requests==2.19.1
+six==1.11.0
+urllib3==1.23
+Werkzeug==0.14.1

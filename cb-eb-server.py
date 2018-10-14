@@ -55,7 +55,7 @@ def webhook():
 		except (WebhookInvalidPayload, SignatureVerificationError) as e:
 			return str(e), 400
 
-		logger.info("Received event: id={id}, type={type}".format(id=event.id, type=event.type))
+		logger.info("Received event: id={id}, code={code}, type={type}".format(id=event.id, code=event.data.code, type=event.type))
 		# check event.type. We should only receive charge:confirmed. If webhook is misconfigured we want to ignore pending or failed charges.
 		if event.type != "charge:confirmed":
 			logger.debug('Event is not a confirmed charge. Waiting...')
